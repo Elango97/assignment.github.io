@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+	<head>
+		<title>Our Menu </title>				
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>	
+		<h1 class="center">Our Menu</h1>	
+		<div class="row">
+			<div class="col">
+				<div class="line">
+					<button class="btn chicken">Chicken</button>
+					<p>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mogna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>					
+				</div>				
+			</div>
+			<div class="col">
+				<div class="line">
+					<button class="btn beef">Beef</button>
+				<p>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mogna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>					
+				</div>				
+			</div>
+			<div class="col-12">
+				<div class="line">
+					<button class="btn sushi">Sushi</button>
+				<p>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mogna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in volupate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidant non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>				
+			</div>
+    </div>
+    <div class="center">
+      <h1>Assignment - 2</h1>
+      <table class="center" border = "10">
+        <tr class="center">
+           <th>Sno</th>
+           <th>Title</th>
+           <th>Action</th>
+        </tr>
+        <tr>
+           <td>1</td>
+           <td>Title 1</td>
+           <td><button id="b1on" onclick="myFunction(1)"  type="button">Up</button> <button id="b1off" type="button" onclick="myFunction(2)">Down</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Title 2</td>
+          <td><button type="button">Up</button> <button type="button">Down</button></td>
+        </tr>  
+        <tr>
+          <td>3</td>
+          <td>Title 3</td>
+          <td><button type="button">Up</button> <button type="button">Down</button></td>
+        </tr> 
+        <tr>
+          <td>4</td>
+          <td>Title 4</td>
+          <td><button type="button">Up</button> <button type="button">Down</button></td>
+        </tr> 
+        <tr>
+          <td>5</td>
+          <td>Title 5</td>
+          <td><button type="button">Up</button> <button type="button">Down</button></td>
+        </tr> 
+        <tr>
+          <td>6</td>
+          <td>Title 6</td>
+          <td><button type="button">Up</button> <button type="button">Down</button></td>
+        </tr> 
+        <tr>
+          <td>7</td>
+          <td>Title 7</td>
+          <td><button id="b7on" onclick="myFunction(2)" type="button">Up</button> <button  id="b7off" type="button" onclick="myFunction(1)">Down</button></td>
+        </tr>
+     </table>
+    </div>
+    
+   <script>
+    function myFunction(x) {
+      if(x==1)
+      {
+        document.getElementById("b1on").disabled = true;
+        document.getElementById("b7off").disabled = true;
+
+        document.getElementById("b1off").disabled = false;
+        document.getElementById("b7on").disabled = false;
+      }
+      if(x==2)
+      {
+        document.getElementById("b1on").disabled = false;
+        document.getElementById("b7off").disabled = false;
+
+        document.getElementById("b1off").disabled = true;
+        document.getElementById("b7on").disabled = true;
+      }
+    }
+    </script>
+	</body>
+</html>
