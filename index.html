@@ -28,69 +28,98 @@
     </div>
     <div class="center">
       <h1>Assignment - 2</h1>
-      <table class="center" border = "10">
+      <table id="mytable" class="center" border = "10">
         <tr class="center">
-           <th>Sno</th>
-           <th>Title</th>
-           <th>Action</th>
+           <th> Sno </th>
+           <th> Title </th>
+           <th> Action </th>
         </tr>
-        <tr>
+        <tr id ="1">
            <td>1</td>
+		   <td class="none">1</td>
            <td>Title 1</td>
-           <td><button id="b1on" onclick="myFunction(1)"  type="button">Up</button> <button id="b1off" type="button" onclick="myFunction(2)">Down</button></td>
+           <td> <button disabled type="button">Up</button> <button  type="button" onclick="myFunction(12)">Down</button> </td>
+		  
         </tr>
-        <tr>
+        <tr id ="2">
           <td>2</td>
+		  <td class="none">2</td>
           <td>Title 2</td>
-          <td><button type="button">Up</button> <button type="button">Down</button></td>
+          <td> <button  onclick="myFunction(21)"  type="button">Up</button> <button   onclick="myFunction(22)" type="button">Down</button> </td>
+		  
         </tr>  
-        <tr>
+        <tr id ="3">
           <td>3</td>
+		  <td class="none">3</td>
           <td>Title 3</td>
-          <td><button type="button">Up</button> <button type="button">Down</button></td>
+          <td> <button  onclick="myFunction(31)" type="button">Up</button> <button  onclick="myFunction(32)" type="button">Down</button> </td>
         </tr> 
-        <tr>
+        <tr id ="4">
           <td>4</td>
+		  <td class="none">4</td>
           <td>Title 4</td>
-          <td><button type="button">Up</button> <button type="button">Down</button></td>
+          <td> <button onclick="myFunction(41)" type="button">Up</button> <button onclick="myFunction(42)" type="button">Down</button> </td>
         </tr> 
-        <tr>
+        <tr id ="5">
           <td>5</td>
+		  <td class="none">5</td>
           <td>Title 5</td>
-          <td><button type="button">Up</button> <button type="button">Down</button></td>
+          <td> <button onclick="myFunction(51)" type="button">Up</button> <button onclick="myFunction(52)" type="button">Down</button> </td>
         </tr> 
-        <tr>
+        <tr id ="6">
           <td>6</td>
+		  <td class="none">6</td>
           <td>Title 6</td>
-          <td><button type="button">Up</button> <button type="button">Down</button></td>
+          <td> <button " onclick="myFunction(61)" type="button">Up</button> <button onclick="myFunction(62)" type="button">Down</button> </td>
         </tr> 
-        <tr>
+        <tr id ="7">
           <td>7</td>
+		  <td class="none">7</td>
           <td>Title 7</td>
-          <td><button id="b7on" onclick="myFunction(2)" type="button">Up</button> <button  id="b7off" type="button" onclick="myFunction(1)">Down</button></td>
+		  <td> <button   onclick="myFunction(71)" type="button">Up</button> <button   type="button" disabled >Down</button> </td>
         </tr>
      </table>
     </div>
     
    <script>
-    function myFunction(x) {
-      if(x==1)
-      {
-        document.getElementById("b1on").disabled = true;
-        document.getElementById("b7off").disabled = true;
-
-        document.getElementById("b1off").disabled = false;
-        document.getElementById("b7on").disabled = false;
-      }
-      if(x==2)
-      {
-        document.getElementById("b1on").disabled = false;
-        document.getElementById("b7off").disabled = false;
-
-        document.getElementById("b1off").disabled = true;
-        document.getElementById("b7on").disabled = true;
-      }
-    }
+		function myFunction(x)
+		{
+			x = parseInt(x, 10);
+			var row = 0;
+			var move = 0;
+			row = parseInt(x/10, 10);			
+			move = parseInt(x%10, 10);	
+			if(move == 2)
+			{				
+				var s = document.getElementById("mytable").rows[row].cells;
+				var first_val = s[1].innerHTML;
+				first_val = parseInt(first_val, 10);	
+				
+				var r = document.getElementById("mytable").rows[row+1].cells;
+				var second_val = r[1].innerHTML;
+			
+				r[1].innerHTML = first_val;
+				r[2].innerHTML = "Title " + first_val;
+			
+				s[1].innerHTML =  second_val;
+				s[2].innerHTML = "Title " + second_val;	
+			}
+			if(move == 1)
+			{																
+				var s = document.getElementById("mytable").rows[row].cells;
+				var first_val = s[1].innerHTML;
+				first_val = parseInt(first_val, 10);	
+			
+				var r = document.getElementById("mytable").rows[row-1].cells;
+				var second_val = r[1].innerHTML;
+				//swap the values using temp variables
+				r[1].innerHTML = first_val;
+				r[2].innerHTML = "Title " + first_val;
+			
+				s[1].innerHTML =  second_val;
+				s[2].innerHTML = "Title " + second_val;	
+			}
+		}
     </script>
 	</body>
 </html>

@@ -93,3 +93,8 @@ p{
     .col {     grid-column: span 12;}
     .col-12 {  grid-column: span 12;}
 }
+
+.none
+{
+	display:none;
+}
